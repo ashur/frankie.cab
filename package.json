@@ -1,0 +1,14 @@
+{
+  "name": "frankie.cab",
+  "version": "1.0.0",
+  "description": "frankie.cab",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@11ty/eleventy": "^0.8.2",
+    "clean-css": "^4.2.1"
+  }
+}
