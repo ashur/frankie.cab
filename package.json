@@ -8,7 +8,7 @@
   },
   "license": "ISC",
   "dependencies": {
-    "@11ty/eleventy": "^0.8.2",
+    "@11ty/eleventy": "^0.10.0",
     "clean-css": "^4.2.1"
   }
 }
