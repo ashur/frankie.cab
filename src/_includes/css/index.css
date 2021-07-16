@@ -1,3 +1,7 @@
+* {
+	box-sizing: border-box;
+}
+
 body {
 	margin: 0;
 	padding: 0;
@@ -6,23 +10,28 @@ body {
 }
 
 main {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
+	display: grid;
+	min-height: 100vh;
+	padding: 1em;
+	justify-content: center;
+	align-content: center;
 }
 
-p {
-	position: absolute;
+.visually-hidden {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: auto;
 	margin: 0;
-	top: 50%;
-	right: 0;
-	left: 0;
-	text-align: center;
-	transform: translateY(-50%);
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	white-space: nowrap;
 }
 
-a {
-	text-decoration: none;
+.doorbell {
+	cursor: pointer;
+	border: none;
+	background-color: transparent;
+	font-size: 1em;
 }

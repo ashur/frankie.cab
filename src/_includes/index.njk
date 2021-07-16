@@ -10,7 +10,7 @@
 -->
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
+
 	<title>{{ site.title }}</title>
 
 	<meta name="description" content="{{ site.description }}">
@@ -26,6 +26,8 @@
 	<meta property="twitter:description" content="{{ site.description }}">
 	<meta property="twitter:image" content="http://frankie.cab/images/frankie.cab.png">
 
+	<link rel="prefetch" href="/audio/doorbell.mp3" as="audio">
+
 	{% set css %}
 		{% include "css/index.css" %}
 	{% endset %}
@@ -33,7 +35,25 @@
 </head>
 <body>
 	<main>
-		<p>{{ site.description }}</p>
+		<p>
+			{{ site.description }}
+			<button
+				class="[][][ doorbell ]"
+			>
+				<span class="[][ visually-hidden ][]">Play doorbell sound</span>
+				<span role="img" aria-label="bell">🔔</span>
+			</button>
+		</p>
 	</main>
+
+	<script>
+		const audioDoorbell = new Audio( "/audio/doorbell.mp3" );
+		const elDoorbell = document.querySelector( "[aria-label='bell']" );
+		elDoorbell.addEventListener( "click", () =>
+		{
+			audioDoorbell.currentTime = 0;
+			audioDoorbell.play();
+		});
+	</script>
 </body>
 </html>
