@@ -3,15 +3,17 @@
 }
 
 body {
+	position: relative;
 	margin: 0;
 	padding: 0;
-	background-color: #fccad3;
-	font-size: 32px;
+	font-size: 64px;
+	height: 100vh;
+	overflow: hidden;
 }
 
 main {
 	display: grid;
-	min-height: 100vh;
+	height: 100%;
 	padding: 1em;
 	justify-content: center;
 	align-content: center;
@@ -32,6 +34,26 @@ main {
 .doorbell {
 	cursor: pointer;
 	border: none;
+	border-radius: 0.125em;
+	/* padding: 1em; */
 	background-color: transparent;
 	font-size: 1em;
 }
+	.jingle {
+		animation-delay: 0.45s;
+		animation-duration: 0.25s;
+		animation-name: jingle;
+		animation-iteration-count: 2;
+	}
+
+	@keyframes jingle {
+		0% {
+			transform: rotate( 5deg );
+		}
+		50% {
+			transform: rotate( -5deg );
+		}
+		100% {
+			transform: rotate( 5deg );
+		}
+	}

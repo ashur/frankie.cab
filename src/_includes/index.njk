@@ -35,24 +35,25 @@
 </head>
 <body>
 	<main>
-		<p>
-			{{ site.description }}
-			<button
-				class="[][][ doorbell ]"
-			>
-				<span class="[][ visually-hidden ][]">Play doorbell sound</span>
-				<span role="img" aria-label="bell">🔔</span>
-			</button>
-		</p>
+		<button
+			class="[][][ doorbell ]"
+		>
+			<span class="[][ visually-hidden ][]">Play doorbell sound</span>
+			<span role="img" aria-label="bell">🔔</span>
+		</button>
 	</main>
 
 	<script>
 		const audioDoorbell = new Audio( "/audio/doorbell.mp3" );
-		const elDoorbell = document.querySelector( "[aria-label='bell']" );
+		const elDoorbell = document.querySelector( ".doorbell" );
+
 		elDoorbell.addEventListener( "click", () =>
 		{
 			audioDoorbell.currentTime = 0;
 			audioDoorbell.play();
+			elDoorbell.classList.add( "jingle" );
+
+			setTimeout( () => elDoorbell.classList.remove( "jingle" ), 1000 );
 		});
 	</script>
 </body>
